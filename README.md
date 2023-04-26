@@ -1,2 +1,2 @@
 # alphaPygame
- A simple pygame project for beginners
+ A simple pygame project for beginners.
