@@ -4,18 +4,18 @@
 
 **Objectives:**
 
-- Make the ball bounce off of the left wall. (ball.38)
-- Prevent the paddle from going off screen. (paddle.17)
-- Delete bricks when they are hit. (bricks.26)
-- Display an ending message when ball goes off bottom of screen. (main.78)
-- Add a score that is increased when bricks are hit. (brick.36)
+- Make the ball bounce off of the left wall. (see ball.py line 38)
+- Prevent the paddle from going off screen. (see paddle.py line 17)
+- Delete bricks when they are hit. (see bricks.py line 26)
+- Display an ending message when ball goes off bottom of screen. (see main.py line 78)
+- Add a score that is increased when bricks are hit. (see brick.py line 36)
 - Whatever else you want to add!
 
-Each of these objectives are available for you to work on in any order. Througout the code base, you will find '''comments''' with hints about what you can ask ChatGPT in order to learn more about the code and solve the objectives. Make sure and record the best prompts/responses from your convos in the log.txt file for later reference. 
+Each of these objectives are available for you to work on in any order. Througout the code base, you will find '''comments''' with hints about what you can copy paste into ChatGPT in order to learn more about the code and solve the objectives. Make sure and record the best prompts/responses from your convos in the log.txt file for later reference. 
 
 ### Before you begin...
 
-It will be very helpful for you to know a little bit about Python and Pygame before you start this project. Here is a list of prompts that you can use to get a broad view of these tools. If you already know about some of these topics, you can skip them. 
+It will be very helpful for you to know a little bit about Python and Pygame before you start this project. Here is a list of prompts that you can copy paste into ChatGPT to get a broad view of these tools. If you already know about some of these topics, you can skip them. 
 
 - What is Python?
 - What is Pygame?
