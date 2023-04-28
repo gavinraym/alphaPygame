@@ -14,11 +14,13 @@ def move_ball():
     state.BALL.left += state.BALL_SPEED_X
     state.BALL.top += state.BALL_SPEED_Y
     
+    
     # check for collisions with paddle
     """What is the rect.colliderect() method?"""
     if state.BALL.colliderect(state.PADDLE):
         state.BALL.top = state.PADDLE.top - state.BALL_HEIGHT
         state.BALL_SPEED_Y = -state.BALL_SPEED_Y
+        
         
     # Check for collisions with bricks
     """How can I iterate over a lists indexes?"""
@@ -53,3 +55,4 @@ def move_ball():
     """How do I set a variable to False in a file that is being imported?"""
     """What is a global static variable?"""
     ## ADD YOUR CODE HERE ###
+    
