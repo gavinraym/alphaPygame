@@ -1,0 +1,1 @@
+I would like help creating a pygame pitfaller game where the player is a the character has to move left and right to avoid hitting obstacles while they fall down a pit.
