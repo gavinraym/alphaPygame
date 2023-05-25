@@ -15,6 +15,7 @@ class Player(pygame.sprite.Sprite):
         self.rect.center = (WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
         self.velocity = pygame.math.Vector2(0, 0)
         self.gravity = pygame.math.Vector2(0, PLAYER_GRAVITY)
+        
 
     def update(self):
         self.velocity += self.gravity
@@ -24,15 +25,17 @@ class Player(pygame.sprite.Sprite):
         if pygame.sprite.spritecollide(self, sprites.platforms, False):
             self.rect.y -= self.velocity.y
             self.velocity.y = 0
+            self.state = "resting"
 
         # Check collision with ground
-        if self.rect.bottom >= WINDOW_HEIGHT:
+        if self.rect.bottom >= WINDOW_HEIGHT + 250:
             game_over.trigger_game_over()
 
     def jump(self):
-        self.rect.y += 2  # Move player down slightly to check collision below
+        tolerance = 15
+        self.rect.y += tolerance  # Move player down slightly to check collision below
         platforms_collided = pygame.sprite.spritecollide(self, sprites.platforms, False)
-        self.rect.y -= 2  # Move player back up
+        self.rect.y -= tolerance  # Move player back up
         
         if platforms_collided:
             self.velocity.y = -PLAYER_JUMP_HEIGHT

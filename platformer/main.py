@@ -5,7 +5,7 @@ import player
 import platforms
 import sprites
 
-# Initialize Pygame
+# Initialize Pygame     
 pygame.init()
 
 # Create the game window
@@ -26,7 +26,7 @@ while running:
     # Event handling
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            running = False 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 player.jump()
