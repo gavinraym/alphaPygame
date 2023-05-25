@@ -14,6 +14,12 @@
 
 """What is a programming convention?"""
 
+# At the beginning of every puzzle, you will see a comment like this one. It will
+# contain a starter prompt to get you started. You will copy/paste this prompt into
+# ChatGPT and then copy/paste the code that ChatGPT generates into the puzzle file.
+# After that, it is up to you to decide what direction to take your program in.
+# Use your imagination and have fun!
+
 # Now you are ready to start the first puzzle! 
 
 # In the same directory as this file, you will find a file called "1.hello_world.py".
