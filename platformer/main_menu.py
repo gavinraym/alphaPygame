@@ -1,35 +1,30 @@
 import pygame
 import sys
+from settings import *
 
 class MainMenu:
-    def __init__(self, screen, font):
-        self.screen = screen
-        self.font = font
-        self.welcome_msg = "Welcome! Press Spacebar to start the game."
-        self.running = True
+    def __init__(self):
+        self.welcome_msg = FONT.render(
+            WELCOME,
+            True,
+            (255, 255, 255))
     
-    def draw_text(self, text, x, y):
-        surface = self.font.render(text, True, (255, 255, 255))
-        self.screen.blit(surface, (x, y))
+    def draw_text(self, window):
+        window.fill((0, 0, 0))  # Black background
+        text_width, text_height = FONT.size(WELCOME)
+        x = (window.get_width() // 2) - (text_width // 2)
+        y = (window.get_height() // 2) - (text_height // 2)
+        window.blit(self.welcome_msg, (x, y))
 
     def handle_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.running = False
-                sys.exit()
+                CHANGE_STATE(False)
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    self.running = False
+                    CHANGE_STATE("start")
 
-    def run(self):
-        while self.running:
-            self.screen.fill((0, 0, 0))
-            
-            text_width, text_height = self.font.size(self.welcome_msg)
-            x = (self.screen.get_width() // 2) - (text_width // 2)
-            y = (self.screen.get_height() // 2) - (text_height // 2)
-            self.draw_text(self.welcome_msg, x, y)
+    def update(self, window):
+        self.draw_text(window)
+        self.handle_events()
 
-            self.handle_events()
-
-            pygame.display.flip()

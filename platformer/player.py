@@ -29,9 +29,8 @@ class Player(pygame.sprite.Sprite):
 
         # Check collision with ground
         if self.rect.bottom >= WINDOW_HEIGHT + 250:
-            print("Game over detected:", GAME_OVER)
-            CHANGE_STATE("GAME_OVER", True)
-            print("Game over set:", GAME_OVER)
+            CHANGE_STATE('game_over')
+
 
     def jump(self):
         tolerance = 15
@@ -41,16 +40,3 @@ class Player(pygame.sprite.Sprite):
         
         if platforms_collided:
             self.velocity.y = -PLAYER_JUMP_HEIGHT
-
-def start():
-  global player_one
-  player_one = Player()
-  sprites.player.add(player_one)
-
-def update():
-  global player_one
-  player_one.update()
-
-def jump():
-  global player_one
-  player_one.jump()
