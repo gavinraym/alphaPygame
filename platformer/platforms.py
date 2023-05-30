@@ -29,6 +29,27 @@ class Platform(pygame.sprite.Sprite):
         # Remove platforms that go off-screen
         if self.rect.right <= 0:
             self.kill()
+            
+    # GreenSquare class
+class GreenSquare(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        super().__init__()
+        self.image = pygame.Surface((SQUARE_SIZE, SQUARE_SIZE))
+        self.image.fill("green")
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+
+    def update(self):
+        # self.rect.move_ip(-5, 0)  # Auto-scroll the green squares
+
+        # Check collision with player
+        if pygame.sprite.spritecollide(self, sprites.player, False):
+            ADD_POINTS(1)
+            self.kill()
+            print("Points:", POINTS)
+
+            
 
 def start():
     starting_platform = Platform(WINDOW_WIDTH // 2 + PLATFORM_WIDTH // 2, WINDOW_HEIGHT - PLATFORM_HEIGHT -50)
@@ -43,7 +64,10 @@ def create_platforms():
     platform = Platform(x, y)
     platforms.append(platform)
     sprites.platforms.add(platform)
-
+ # Randomly create green squares
+    if random.random() < 0.4:  # Adjust the probability as needed
+        green_square = GreenSquare(x, y - SQUARE_SIZE)
+        sprites.platforms.add(green_square)
 
 def update():
     global frame_count  # Declare frame_count as a global variable

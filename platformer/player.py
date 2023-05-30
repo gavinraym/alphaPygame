@@ -29,7 +29,9 @@ class Player(pygame.sprite.Sprite):
 
         # Check collision with ground
         if self.rect.bottom >= WINDOW_HEIGHT + 250:
-            game_over.trigger_game_over()
+            print("Game over detected:", GAME_OVER)
+            CHANGE_STATE("GAME_OVER", True)
+            print("Game over set:", GAME_OVER)
 
     def jump(self):
         tolerance = 15
