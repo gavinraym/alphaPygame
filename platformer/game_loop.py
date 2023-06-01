@@ -54,6 +54,10 @@ class GameLoop():
         for platform in sprites.platforms:
             platform.update()
             
+        # Green square update
+        for green_square in sprites.green_squares:
+            green_square.update()
+            
         # Create new platforms
         self.frame_count -= 1    
         if self.frame_count == 0:

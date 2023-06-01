@@ -12,11 +12,11 @@ class GreenSquare(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
 
-    # def update(self):
-        # self.rect.move_ip(-5, 0)  # Auto-scroll the green squares
+    def update(self):
+        self.rect.move_ip(-5, 0)  # Auto-scroll the green squares
 
         # Check collision with player
-        # if pygame.sprite.spritecollide(self, sprites.player, False):
-        #     ADD_POINTS(1)
-        #     self.kill()
-        #     print("Points:", POINTS)
+        if pygame.sprite.spritecollide(self, sprites.player, False):
+            ADD_POINTS(1)
+            self.kill()
+            print("Points:", POINTS)
