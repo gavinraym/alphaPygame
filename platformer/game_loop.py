@@ -38,7 +38,7 @@ class GameLoop():
     def update(self, window):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                result = False 
+                CHANGE_STATE(False) 
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     self.player.jump()
@@ -50,7 +50,7 @@ class GameLoop():
         for green_square in sprites.green_squares.sprites():
             green_square.rect.move_ip(-5, 0)
             
-        # Indevidual platform update
+        # Individual platform update
         for platform in sprites.platforms:
             platform.update()
             
